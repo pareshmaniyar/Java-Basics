@@ -58,8 +58,14 @@ class InputMethods{
 		int iinput = Integer.parseInt(sc.nextLine());
 
 		System.out.println("iinput " + iinput ); // works well, keeps on asking for an int value
-		System.out.println("reading two int strictly on a single line speratetd by space");
+		System.out.println("reading two int strictly on two seperate lines");
 		int f1 = sc.nextInt(); int f2 = sc.nextInt(); sc.nextLine();
+
+		int [] b = new int[1000]; int bi=0;
+		System.out.println("reading integers strictly on a single line speratetd by space");
+		while(!sc.hasNext()){
+			b[bi++] = sc.nextInt();
+		}
 		//long
 		System.out.println("Type float " );
 		System.out.println("Your float " + Float.parseFloat(sc.nextLine()));
