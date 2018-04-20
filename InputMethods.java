@@ -58,13 +58,16 @@ class InputMethods{
 		int iinput = Integer.parseInt(sc.nextLine());
 
 		System.out.println("iinput " + iinput ); // works well, keeps on asking for an int value
-		System.out.println("reading two int strictly on two seperate lines");
+		System.out.println("reading two int strictly on two seperate lines/spaces");
 		int f1 = sc.nextInt(); int f2 = sc.nextInt(); sc.nextLine();
+		System.out.println("Int values are " + f1 + " and " + f2);
 
-		int [] b = new int[1000]; int bi=0;
-		System.out.println("reading integers strictly on a single line speratetd by space");
-		while(!sc.hasNext()){
-			b[bi++] = sc.nextInt();
+		int [] b = new int[1000]; int bi = 0;
+		System.out.println("reading integers strictly on a single line seperatetd by space/comma");
+		String [] SplitStringArray = sc.nextLine().trim().split("[\\s ,]");
+		for(int i = 0; i < SplitStringArray.length; i++){
+			b[i] = Integer.parseInt(SplitStringArray[i]);
+			System.out.println(i + ": " + b[i]);
 		}
 		//long
 		System.out.println("Type float " );
@@ -77,7 +80,7 @@ class InputMethods{
 		System.out.println("Type String to trim ");
 		String trimxString = sc.nextLine();
 		String trimmed = trimxString.trim();
-		System.out.println("Your Trimmed string:");
+		System.out.println("Your Trimmed string:" + trimmed + "----");
 		//replace
 		System.out.println("Type String to replace all the vowels with * and split at spaces");
 		String replaceString = sc.nextLine();
